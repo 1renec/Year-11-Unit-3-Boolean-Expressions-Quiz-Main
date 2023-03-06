@@ -2,30 +2,27 @@ public class Main {
 
     // Question 1 - calculateGrade
     public String calculateGrade(int grade) {
-        if (grade >= 90) {
+        if (grade >= 90 && grade <= 100) {
             return "A";
         }
-        if (grade >= 80 && grade < 89) {
+        if (grade >= 80 && grade <= 89) {
             return "B";
         }
-        if (grade >= 70 && grade < 79) {
+        if (grade >= 70 && grade <= 79) {
             return "C";
-        }
-        if (grade >= 50 && grade < 59) {
+        } if (grade >= 50 && grade <= 59) {
             return "D";
-        }
-        if (grade <= 49) {
+    } else {
             return "F";
         }
-        return calculateGrade(grade);
     }
 
     // Question 2 - fizzBuzz
     public String fizzBuzz(int a) {
-        if (a % 3 == 0) {
+        if (a % 3 == 0 && n % 5 != 0) {
             return "fizz";
         }
-        else if (a % 5 == 0) {
+        else if (a % 5 == 0 && n % 3 != 0) {
             return "buzz";
         }
         else if ((a % 3 == 0) && (a % 5 == 0)) {
@@ -37,8 +34,12 @@ public class Main {
     }
     // Question 3 - frontBack
     public String frontBack(String argument) {
-            return argument.substring(1,3) + argument + argument.substring(1,3);
+        if (argument.length() < 2) {
+            return argument;
+        } else {
+            return argument.substring(0,2) + argument + argument.substring(0,2)
         }
+    }
 
 
     // Question 4 - twoAsOne
@@ -53,7 +54,14 @@ public class Main {
 
     // Question 5 - endUp
     public String endUp(String sentence) {
-        sentence.toUpperCase();
-        return sentence;
+       if (sentence.length() <= 2) {
+           return argument.toUpperCase();
+       } else {
+           String first = sentence.substring(0, sentence.length()-3);
+           String last = str.substring(sentence.length()-3, sentence.length());
+           
+           return first + last.toUpperCase();
+       }
+    }
     }
 }
